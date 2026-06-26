@@ -3,7 +3,6 @@ import time
 import threading
 import queue
 import random
-from cloakbrowser import CloakBrowser
 from cloakbrowser import launch
 from pow_solver import solve_challenge, build_pow_header
 from utils import setup_utf8
