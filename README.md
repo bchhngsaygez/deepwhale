@@ -10,7 +10,7 @@
 
 It uses browser fingerprinting via `cloakbrowser` (Playwright) to bypass Cloudflare and bot-detection, enabling reliable programmatic access to DeepSeek's models.  
 
-**NOTE**: I am not sure why it fails to work with OpenClaude; when asked to create a file or write code, the process cuts off and the action is not executed. I have only tested it with Cline, Roo Code, Continue.dev, and OpenClaude—I haven't tested other CLIs like OpenCode or Blackbox—but the aforementioned error is most pronounced in OpenClaude, whereas other CLIs seem to function normally. If you know the reason, please reply in the Issues section.
+**NOTE**: I have no idea why this repo of mine runs perfectly—smooth as butter—on Cline, Roo Code, Continue.dev, and similar tools, yet when I switch to CLI AI agents, it absolutely refuses to work. It can't do a damn thing—creating files, writing code, making folders—nothing works. If you know how to fix this, please feel free to leave suggestions or a solution in the "Issues" section.
 
 ---
 
