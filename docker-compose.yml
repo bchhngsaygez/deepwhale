@@ -1,0 +1,19 @@
+services:
+  deepwhale:
+    build: .
+    container_name: deepwhale
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    volumes:
+      # Mount your .env file so credentials are not baked into the image
+      - ./.env:/app/.env:ro
+      # Persist the cloakbrowser Chromium download between restarts
+      - cloakbrowser-data:/home/deepwhale/.cloakbrowser
+    environment:
+      - TZ=UTC
+    # Allow the container to use more memory for Chromium
+    shm_size: "2gb"
+
+volumes:
+  cloakbrowser-data:
