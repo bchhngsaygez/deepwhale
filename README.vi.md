@@ -10,7 +10,7 @@
 
 Công cụ sử dụng kỹ thuật lấy dấu vân tay trình duyệt qua `cloakbrowser` (Playwright) để vượt qua Cloudflare và các hệ thống chống bot, cho phép truy cập lập trình đáng tin cậy vào các mô hình của DeepSeek.  
 
-**LƯU Ý**:Tôi không biết bằng cách nào nó lại không thể sài đc trên OpenClaude,khi hỏi nó tạo file hay viết code,nó sẽ bị ngắt đoạn và ko thực hiện hành động,tôi chỉ mới test trên Cline,Roo Code,Continue.dev và OpenClaude,và những CLI khác như OpenCode,Blackbox,... thì tôi chưa test,nhưng lỗi đã kể trên xuất hiện rõ nhất ở OpenClaude,còn những CLI khác thì có vẻ vẫn bình thường.Nếu bạn biết lí do hãy trả lời ở phần Issues
+**LƯU Ý**:Tôi không hiểu tại sao kho mã nguồn (repo) này của mình lại chạy cực kỳ mượt mà trên Cline, Roo Code, Continue.dev và các công cụ tương tự, nhưng khi chuyển sang dùng các AI agent chạy trên dòng lệnh (CLI), nó lại hoàn toàn không chịu hoạt động. Nó không làm được bất cứ việc gì cả—từ tạo file, viết code cho đến tạo thư mục—tất cả đều thất bại. Nếu bạn biết cách khắc phục vấn đề này, vui lòng để lại gợi ý hoặc giải pháp trong mục "Issues".
 
 ---
 
