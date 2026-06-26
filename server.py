@@ -361,6 +361,19 @@ def list_models():
     return jsonify({"object": "list", "data": data})
 
 
+@app.get("/v1/chat/completions")
+@app.get("/chat/completions")
+def chat_completions_info():
+    return jsonify({
+        "message": "This endpoint requires a POST request with a JSON body.",
+        "usage": 'curl -X POST http://localhost:5001/v1/chat/completions -H "Authorization: Bearer YOUR_API_KEY" -H "Content-Type: application/json" -d \'{"model":"deepseek-v4-flash","messages":[{"role":"user","content":"Hello"}]}\'',
+        "endpoints": {
+            "/v1/chat/completions": "POST - Chat completion",
+            "/v1/models": "GET - List models",
+            "/healthz": "GET - Health check",
+        }
+    })
+
 @app.post("/v1/chat/completions")
 @app.post("/chat/completions")
 def chat_completions():
@@ -850,6 +863,21 @@ def admin_curl_test():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
+@app.errorhandler(404)
+def not_found(e):
+    return jsonify({
+        "message": "Endpoint not found. Here are the available endpoints:",
+        "endpoints": {
+            "GET /v1/models": "List available models",
+            "POST /v1/chat/completions": "Chat completion (OpenAI-compatible)",
+            "GET /healthz": "Health check",
+            "GET /readyz": "Readiness check",
+            "GET /admin/login": "Admin login page",
+            "GET /admin/dashboard": "Admin dashboard",
+        },
+        "docs": "https://github.com/bchhngsaygez/deepwhale"
+    }), 404
 
 if __name__ == "__main__":
     host = os.environ.get("HOST", "0.0.0.0")
