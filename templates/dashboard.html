@@ -911,17 +911,10 @@ body {
             <h2><span class="icon">&#9881;</span> <span data-i18n="settings.server_config">Server Config</span></h2>
           </div>
           <div class="card-subtitle" data-i18n="settings.server_sub">Changes are saved to .env and applied immediately. Some changes require a restart.</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label data-i18n="settings.api_key">API Key</label>
-              <input type="text" id="api_key" placeholder="sk-..." spellcheck="false">
-              <div class="helper" data-i18n="settings.api_key_help">Used by clients to authenticate requests</div>
-            </div>
-            <div class="form-group">
-              <label data-i18n="settings.port">Port</label>
-              <input type="number" id="port" placeholder="5001">
-              <div class="helper" data-i18n="settings.port_help">Server listen port (restart required)</div>
-            </div>
+          <div class="form-group">
+            <label data-i18n="settings.port">Port</label>
+            <input type="number" id="port" placeholder="5001">
+            <div class="helper" data-i18n="settings.port_help">Server listen port (restart required)</div>
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -1347,7 +1340,7 @@ function refreshOverview() {
     document.getElementById('ovAccountCount').textContent = data.email ? '1' : '0';
     document.getElementById('ovAccountStatus').textContent = data.email || t('toast.no_accounts');
   }).catch(() => {});
-  fetch('/v1/models', { headers: { 'Authorization': 'Bearer ' + (document.getElementById('api_key').value || 'sk-my-secret-key-1') } })
+  fetch('/v1/models', { headers: { 'Authorization': 'Bearer sk-my-secret-key-1' } })
     .then(r => r.json()).then(data => {
       document.getElementById('ovModelCount').textContent = (data.data || []).length;
     }).catch(() => {});
@@ -1575,7 +1568,6 @@ async function loadConfig() {
     const resp = await fetch('/admin/api/config');
     if (!resp.ok) return;
     const data = await resp.json();
-    document.getElementById('api_key').value = data.api_key || '';
     document.getElementById('port').value = data.port || '5001';
     document.getElementById('host').value = data.host || '0.0.0.0';
     document.getElementById('email').value = data.email || '';
@@ -1590,7 +1582,6 @@ async function saveConfig() {
   try {
     const resp = await fetch('/admin/api/config', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({
       admin_password: document.getElementById('admin_password').value,
-      api_key: document.getElementById('api_key').value,
       port: parseInt(document.getElementById('port').value) || 5001,
       host: document.getElementById('host').value,
     })});
