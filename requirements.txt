@@ -1,2 +1,3 @@
 flask>=3.1.0
 cloakbrowser>=0.3.30
+undetected-chromedriver>=3.5.0
