@@ -62,8 +62,7 @@ class PlaywrightWorker(threading.Thread):
                 humanize=False,
                 args=[
                     f'--fingerprint={self.fingerprint}',
-                    '--fingerprint-platform=windows'
-                    '--enable-unsafe-swiftshader',
+                    '--fingerprint-platform=windows',
                 ]
             )
             self.page = self.browser.new_page()
