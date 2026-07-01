@@ -144,9 +144,7 @@ Chuyển đổi ngôn ngữ giữa **Tiếng Việt** và **English** có sẵn 
 | `deepseek-chat` | Mặc định | Mô hình trò chuyện kế thừa |
 | `deepseek-reasoner` | Chuyên gia | Có đầu ra suy nghĩ/lý luận |
 | `deepseek-r1` | Chuyên gia | DeepSeek R1 (bật suy nghĩ) |
-| `deepseek-v3` | Mặc định | DeepSeek V3 |
-
-Bí danh tích hợp: `gpt-4o`, `gpt-4`, `gpt-3.5-turbo` → `deepseek-v4-flash`; `o3` → `deepseek-v4-pro`; `o1` → `deepseek-reasoner`; `qwen-plus`, `qwen-turbo`, v.v. → `deepseek-v4-flash`.
+| `deepseek-v3` | Mặc định | DeepSeek V3 |  
 
 ---
 
