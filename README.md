@@ -144,9 +144,7 @@ Language switching between **English** and **Vietnamese** is available in the to
 | `deepseek-chat` | Default | Legacy chat model |
 | `deepseek-reasoner` | Expert | With thinking/reasoning output |
 | `deepseek-r1` | Expert | DeepSeek R1 (thinking enabled) |
-| `deepseek-v3` | Default | DeepSeek V3 |
-
-Built-in aliases: `gpt-4o`, `gpt-4`, `gpt-3.5-turbo` → `deepseek-v4-flash`; `o3` → `deepseek-v4-pro`; `o1` → `deepseek-reasoner`; `qwen-plus`, `qwen-turbo`, etc. → `deepseek-v4-flash`.
+| `deepseek-v3` | Default | DeepSeek V3 |  
 
 ---
 
